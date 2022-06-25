@@ -74,6 +74,7 @@ function onDrop(evt: DragEvent) {
   const startX = evt.clientX
   const startY = evt.clientY
   componentData.list.push({
+    id: uuidv4(),
     ...component,
     style:{
       transform: `translate(${startX - x}px, ${startY - y}px)`,

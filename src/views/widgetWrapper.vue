@@ -30,7 +30,9 @@ const props = defineProps({
 const componentData = useComponentData()
 const widgetRef = shallowRef()
 onClickOutside(widgetRef, () => {
-  componentData.current = undefined
+  if (componentData.current?.id === props.element.id) {
+    componentData.current = undefined
+  }
 })
 
 const dots = computed(() => {
